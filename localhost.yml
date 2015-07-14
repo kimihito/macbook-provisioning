@@ -1,0 +1,84 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  sudo: no
+  vars:
+    homebrew_taps:
+      - caskroom/cask
+      - sanemat/font
+    homebrew_packages:
+      - { name: readline }
+      - { name: openssl }
+      - { name: openssl, state: linked, install_options: force }
+      - { name: python }
+      - { name: ansible }
+      - { name: git }
+      - { name: heroku-toolbelt }
+      - { name: peco }
+      - { name: rbenv }
+      - { name: rbenv-gem-rehash }
+      - { name: ruby-build }
+      - { name: vim }
+      - { name: zsh }
+      - { name: go }
+      - { name: mysql }
+      - { name: hub }
+      - { name: tig }
+    homebrew_cask_packages:
+      - { name: iterm2 }
+      - { name: slack }
+      - { name: atom }
+      - { name: kobito }
+      - { name: vagrant }
+      - { name: virtualbox }
+      - { name: appcleaner }
+      - { name: google-chrome }
+      - { name: firefox }
+      - { name: google-japanese-ime }
+      - { name: night-owl }
+  tasks:
+    - name: homebrewのtapリポジトリを追加
+      homebrew_tap: tap={{ item }} state=present
+      with_items: homebrew_taps
+
+    - name: homebrewをアップデート
+      homebrew: update_homebrew=yes
+
+    - name: brewパッケージをインストール
+      homebrew: >
+        name={{ item.name }}
+        state={{ item.state | default('latest') }}
+        install_options={{
+          item.install_options | default() | join(',')
+          if item.install_options is not string
+          else item.install_options
+        }}
+      with_items: homebrew_packages
+      register: brew_result
+    - name: brewパッケージの情報保存先のディレクトリを作成
+      file: path=brew_info state=directory
+    - name: brewパッケージの情報を保存
+      shell: brew info {{ item }} > brew_info/{{ item }}
+      with_items: brew_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list
+
+    # cask
+    - name: homebrew-cask のインストール
+      homebrew: name=brew-cask state=latest
+    - name: caskパッケージをインストール
+      homebrew_cask: name={{ item.name }} state={{ item.state|default('installed') }}
+      with_items: homebrew_cask_packages
+      register: cask_result
+    - name: caskパッケージの情報保存先ディレクトリを作成
+      file: path=cask_info state=directory
+    - name: caskパッケージの情報を保存
+      shell: brew cask info {{ item }} > cask_info/{{ item }}
+      with_items: cask_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list
+
+    - name: oh-my-zshのインストール
+      shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+      args:
+        creates: ~/.oh-my-zsh/
+
+  handlers:
+    - name: run fc-cache
+      shell: fc-cache -vf
