@@ -36,6 +36,7 @@
       - { name: firefox }
       - { name: google-japanese-ime }
       - { name: night-owl }
+      - { name: dropbox }
   tasks:
     - name: homebrewのtapリポジトリを追加
       homebrew_tap: tap={{ item }} state=present
