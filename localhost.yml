@@ -6,6 +6,7 @@
     homebrew_taps:
       - caskroom/cask
       - sanemat/font
+      - motemen/ghq
     homebrew_packages:
       - { name: readline }
       - { name: openssl }
@@ -24,6 +25,7 @@
       - { name: mysql }
       - { name: hub }
       - { name: tig }
+      - { name: ghq }
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: slack }
