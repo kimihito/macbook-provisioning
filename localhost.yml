@@ -27,6 +27,8 @@
       - { name: tig }
       - { name: ghq }
       - { name: nodebrew }
+      - { name: libpng }
+      - { name: imagemagick }
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: slack }
