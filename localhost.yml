@@ -26,6 +26,7 @@
       - { name: hub }
       - { name: tig }
       - { name: ghq }
+      - { name: nodebrew }
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: slack }
