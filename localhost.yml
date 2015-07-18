@@ -30,6 +30,7 @@
       - { name: libpng }
       - { name: imagemagick }
       - { name: ctags }
+      - { name: wget }
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: slack }
@@ -43,6 +44,7 @@
       - { name: google-japanese-ime }
       - { name: night-owl }
       - { name: dropbox }
+      - { name: pomodone }
   tasks:
     - name: homebrewのtapリポジトリを追加
       homebrew_tap: tap={{ item }} state=present
