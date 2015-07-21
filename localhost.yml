@@ -45,6 +45,7 @@
       - { name: night-owl }
       - { name: dropbox }
       - { name: pomodone }
+      - { name: cyberduck }
   tasks:
     - name: homebrewのtapリポジトリを追加
       homebrew_tap: tap={{ item }} state=present
