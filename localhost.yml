@@ -47,6 +47,7 @@
       - { name: pomodone }
       - { name: cyberduck }
       - { name: openoffice }
+      - { name: licecap }
   tasks:
     - name: homebrewのtapリポジトリを追加
       homebrew_tap: tap={{ item }} state=present
