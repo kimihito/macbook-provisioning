@@ -48,6 +48,7 @@
       - { name: cyberduck }
       - { name: openoffice }
       - { name: licecap }
+      - { name: shiftit }
   tasks:
     - name: homebrewのtapリポジトリを追加
       homebrew_tap: tap={{ item }} state=present
