@@ -50,6 +50,7 @@
       - { name: licecap }
       - { name: shiftit }
       - { name: gyazo }
+      - { name: dash }
   tasks:
     - name: homebrewのtapリポジトリを追加
       homebrew_tap: tap={{ item }} state=present
