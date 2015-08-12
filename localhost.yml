@@ -51,6 +51,7 @@
       - { name: shiftit }
       - { name: gyazo }
       - { name: dash }
+      - { name: skype }
   tasks:
     - name: homebrewのtapリポジトリを追加
       homebrew_tap: tap={{ item }} state=present
