@@ -50,6 +50,8 @@
       - { name: gyazo }
       - { name: dash }
       - { name: skype }
+      - { name: discord }
+      - { name: kotori }
   tasks:
     - name: add repository for homebrew
       homebrew_tap: name={{ item }}
