@@ -33,6 +33,7 @@
       - { name: iterm2 }
       - { name: slack }
       - { name: atom }
+      - { name: visual-studio-code }
       - { name: docker }
       - { name: vagrant }
       - { name: virtualbox }
