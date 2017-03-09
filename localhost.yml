@@ -53,6 +53,7 @@
       - { name: skype }
       - { name: discord }
       - { name: kotori }
+      - { name: simplenote }
   tasks:
     - name: add repository for homebrew
       homebrew_tap: name={{ item }}
