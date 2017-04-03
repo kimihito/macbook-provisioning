@@ -30,6 +30,7 @@
       - { name: ctags }
       - { name: wget }
       - { name: terminal-notifier }
+      - { name: node }
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: slack }
@@ -54,6 +55,7 @@
       - { name: skype }
       - { name: discord }
       - { name: kotori }
+      - { name: simplenote }
   tasks:
     - name: add repository for homebrew
       homebrew_tap: name={{ item }}
