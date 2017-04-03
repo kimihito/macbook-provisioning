@@ -29,6 +29,7 @@
       - { name: imagemagick }
       - { name: ctags }
       - { name: wget }
+      - { name: terminal-notifier }
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: slack }
