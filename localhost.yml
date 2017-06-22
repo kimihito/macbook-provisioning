@@ -32,6 +32,7 @@
       - { name: wget }
       - { name: terminal-notifier }
       - { name: node }
+      - { name: glide }
       - { name: wercker }
     homebrew_cask_packages:
       - { name: iterm2 }
