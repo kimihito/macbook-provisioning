@@ -16,8 +16,8 @@
       - { name: heroku-toolbelt }
       - { name: peco }
       - { name: rbenv }
-      # plugin下に入れる- { name: rbenv-gem-rehash }
       - { name: ruby-build }
+      - { name: rbenv-gem-defaults }
       - { name: vim }
       - { name: zsh }
       - { name: go }
@@ -33,7 +33,7 @@
       - { name: terminal-notifier }
       - { name: node }
       - { name: glide }
-      - { name: wercker }
+      - { name: wercker-cli }
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: slack }
