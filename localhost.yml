@@ -59,6 +59,7 @@
       - { name: discord }
       - { name: kotori }
       - { name: simplenote }
+      - { name: ngrok }
   tasks:
     - name: add repository for homebrew
       homebrew_tap: name={{ item }}
