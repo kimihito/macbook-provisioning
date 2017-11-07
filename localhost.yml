@@ -17,7 +17,6 @@
       - { name: peco }
       - { name: rbenv }
       - { name: ruby-build }
-      - { name: rbenv-gem-defaults }
       - { name: vim }
       - { name: zsh }
       - { name: go }
@@ -60,6 +59,9 @@
       - { name: kotori }
       - { name: simplenote }
       - { name: ngrok }
+      - { name: franz }
+      - { name: lastpass }
+      - { name: ticktick }
   tasks:
     - name: add repository for homebrew
       homebrew_tap: name={{ item }}
