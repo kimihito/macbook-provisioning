@@ -6,6 +6,8 @@
     homebrew_taps:
       - sanemat/font
       - wercker/wercker
+      - domt4/autoupdate
+      - buo/cask-upgrade
     homebrew_packages:
       - { name: readline }
       - { name: openssl }
